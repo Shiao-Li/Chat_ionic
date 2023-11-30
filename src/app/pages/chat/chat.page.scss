@@ -2,29 +2,31 @@
     width: 100%;
     border: 1px solid var(--ion-color-medium);
     border-radius: 6px;
-    background: #fff;
+    background: rgb(255, 255, 255);
     resize: none;
     margin-top: 0px;
     --padding-start: 8px;
 }
-
+ 
 .message {
     padding: 10px !important;
     border-radius: 10px !important;
     margin-bottom: 4px !important;
+    
+    //Permite enviar mensajes con saltos de linea
     white-space: pre-wrap;
 }
-
+ 
 .my-message {
     background: var(--ion-color-tertiary);
-    color: #fff;
+    color: #dfdfdf;
 }
-
+ 
 .other-message {
     background: var(--ion-color-secondary);
     color: #fff;
 }
-
+ 
 .time {
     color: #dfdfdf;
     float: right;

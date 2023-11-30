@@ -7,13 +7,13 @@ import firebase from "firebase";
 export const environment = {
   production: false,
   firebaseConfig:{
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: "",
-    measurementId: ""
+    apiKey: "AIzaSyDpvc_IoZtvFP09J-6dkLhLrP58zxXL1xI",
+    authDomain: "chat-ionic-dcc12.firebaseapp.com",
+    projectId: "chat-ionic-dcc12",
+    storageBucket: "chat-ionic-dcc12.appspot.com",
+    messagingSenderId: "261460241805",
+    appId: "1:261460241805:web:fa0f978e3b158dc422a1c4",
+    measurementId: "G-PM9KRH941Q"
   }
 };
 

@@ -16,6 +16,10 @@ const routes: Routes = [
     ...canActivate(redirectLoggedInToChat),
   },
   {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
     path: 'chat',
     ...canActivate(redirectUnauthorizedToLogin),
     loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)

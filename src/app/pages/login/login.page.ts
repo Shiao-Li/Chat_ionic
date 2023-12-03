@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
 
     this.chatService.signup(this.credentialForm.value).then(user => {
       loading.dismiss();
-      this.navigateToChat();
+      this.navigateToSplash();
     }, async err => {
       loading.dismiss();
       const alert = await this.alertController.create({

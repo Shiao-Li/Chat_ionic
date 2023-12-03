@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
 
     this.chatService.signup(this.credentialForm.value).then(user => {
       loading.dismiss();
-      this.navigateToChat();
+      this.navigateToSplash();
     }, async err => {
       loading.dismiss();
       const alert = await this.alertController.create({
@@ -68,7 +68,7 @@ export class LoginPage implements OnInit {
   async navigateToSplash() {
     await this.router.navigate(['/splash']);
     setTimeout(() => {
-      this.navigateToChat();
+      this.router.navigate(['/new-page']);
     }, 2000); // Duración del splash screen (ajusta según sea necesario)
   }
 

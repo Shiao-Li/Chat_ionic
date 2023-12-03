@@ -23,9 +23,10 @@ const routes: Routes = [
     path: 'chat',
     ...canActivate(redirectUnauthorizedToLogin),
     loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
-  },  {
+  },
+  {
     path: 'new-page',
-    loadChildren: () => import('./new-page/new-page.module').then( m => m.NewPagePageModule)
+    loadChildren: () => import('./pages/new-page/new-page.module').then( m => m.NewPagePageModule)
   }
 
 ];

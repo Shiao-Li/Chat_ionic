@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-page',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewPagePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  goToChat() {
+    this.router.navigate(['/chat']);
+  }
 
   ngOnInit() {
   }

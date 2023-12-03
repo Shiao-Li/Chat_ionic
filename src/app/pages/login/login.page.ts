@@ -68,7 +68,7 @@ export class LoginPage implements OnInit {
   async navigateToSplash() {
     await this.router.navigate(['/splash']);
     setTimeout(() => {
-      this.navigateToChat();
+      this.router.navigate(['/new-page']);
     }, 2000); // Duración del splash screen (ajusta según sea necesario)
   }
 

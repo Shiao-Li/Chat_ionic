@@ -27,14 +27,14 @@ export class LoginPage implements OnInit {
     })
   }
 
-  async signUp(){
+  async signUp() {
     const loading = await this.loadingController.create();
     await loading.present();
 
-    this.chatService.signup(this.credentialForm.value).then(user=>{
+    this.chatService.signup(this.credentialForm.value).then(user => {
       loading.dismiss();
-      this.router.navigateByUrl('/chat', {replaceUrl:true});
-    }, async err =>{
+      this.navigateToSplash();
+    }, async err => {
       loading.dismiss();
       const alert = await this.alertController.create({
         header: 'Registro Fallido',
@@ -46,14 +46,14 @@ export class LoginPage implements OnInit {
     });
   }
 
-  async signIn(){
+  async signIn() {
     const loading = await this.loadingController.create();
     await loading.present();
 
-    this.chatService.signIn(this.credentialForm.value).then((res)=>{
+    this.chatService.signIn(this.credentialForm.value).then((res) => {
       loading.dismiss();
-      this.router.navigateByUrl('/chat', {replaceUrl:true});
-    }, async (err) =>{
+      this.navigateToSplash();
+    }, async (err) => {
       loading.dismiss();
       const alert = await this.alertController.create({
         header: 'Parece que ocurrió un error',
@@ -65,12 +65,23 @@ export class LoginPage implements OnInit {
     });
   }
 
+  async navigateToSplash() {
+    await this.router.navigate(['/splash']);
+    setTimeout(() => {
+      this.router.navigate(['/new-page']);
+    }, 2000); // Duración del splash screen (ajusta según sea necesario)
+  }
+
+  async navigateToChat() {
+    await this.router.navigateByUrl('/chat', { replaceUrl: true });
+  }
+
   //Accesso más sencillo a email y password
-  get email(){
+  get email() {
     return this.credentialForm.get('email');
   }
 
-  get password(){
+  get password() {
     return this.credentialForm.get('password');
   }
 
